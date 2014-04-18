@@ -18,12 +18,12 @@ import com.badlogic.gdx.scenes.scene2d.ui.ImageButton;
 import com.badlogic.gdx.scenes.scene2d.utils.SpriteDrawable;
 
 public class GameCode extends ApplicationAdapter {
-	float t = (System.nanoTime()/(float)1000000000);
+	//float t = (System.nanoTime()/(float)1000000000);
 	Stage stage;
 //	SpriteBatch batch;
 	Texture img;
 	List<Card> deck = Card.deck();
-	List<Card> pickedUpDeck = new ArrayList<Card>();
+	//List<Card> pickedUpDeck = new ArrayList<Card>();
 	List<ImageButton> deckImage = new ArrayList<ImageButton>();
 	ImageButton topCard;
 	int i = 1, pos = 0;
@@ -33,7 +33,7 @@ public class GameCode extends ApplicationAdapter {
 	public void create () {
 		// All the world's a stage
 		stage = new Stage();
-		System.out.println(1 + (int)(Math.random() * ((500) + 1)));
+		//System.out.println(1 + (int)(Math.random() * ((500) + 1)));
 		
 		
 		createCards();
@@ -89,8 +89,13 @@ public class GameCode extends ApplicationAdapter {
 					System.out.println("Card " + j + " moved");
 					// Move button to random location
 					deckImage.get(j-1).addAction(Actions.moveTo((0),(0),(float)0.5));
-					pickedUpDeck.add(deck.get(j-1));
-					deck.remove(j-1);
+					
+				
+/*					for (int k = 0; k >= 51; k++)
+						topCard.addAction(Actions.show());*/ //Trying to set topcard after all are placed in Deck.
+
+					//pickedUpDeck.add(deck.get(j-1));
+					//deck.remove(j-1);
 					return true;
 			}
 			});
