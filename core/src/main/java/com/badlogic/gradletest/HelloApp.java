@@ -1,4 +1,3 @@
-
 package com.badlogic.gradletest;
 
 import com.badlogic.gdx.ApplicationAdapter;
@@ -17,7 +16,7 @@ public class HelloApp extends ApplicationAdapter {
 //	SpriteBatch batch;
 	Texture img;
 	ImageButton button;
-	
+
 	@Override
 	public void create () {
 		// All the world's a stage
@@ -29,11 +28,11 @@ public class HelloApp extends ApplicationAdapter {
 		button = new ImageButton(
 				new SpriteDrawable(new Sprite(new Texture("2_of_clubs.png"))),
 				new SpriteDrawable(new Sprite(new Texture("3_of_clubs.png"))));
-		
+
 		// Layout that button
 		button.setSize(100, 200);
 		button.setPosition(20, 20);
-		
+
 		// Handle events (aka controller in MVC)
 		button.addListener(new InputListener() {
 			@Override
@@ -48,9 +47,9 @@ public class HelloApp extends ApplicationAdapter {
 			public void touchUp(InputEvent event, float x, float y, int pointer, int button) {
 				System.out.println("Hi, up there!");
 			}
-			
+
 		});
-		
+
 		// The button is on the stage
 		stage.addActor(button);
 //		batch = new SpriteBatch();
